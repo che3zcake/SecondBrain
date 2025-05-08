@@ -1,0 +1,28 @@
+{
+  "name": "be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -b && node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/hashids": "^2.0.0",
+    "@types/jsonwebtoken": "^9.0.9",
+    "argon2": "^0.43.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "hashids": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "link-preview-js": "^3.0.14",
+    "mongoose": "^8.14.0",
+    "typescript": "^5.8.3",
+    "zod": "^3.24.3"
+  }
+}
