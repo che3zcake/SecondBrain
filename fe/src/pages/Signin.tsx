@@ -14,7 +14,7 @@ export const Signin = () => {
 
     return <div className="bg-slate-300 h-screen flex justify-center">
         <div className="flex flex-col justify-center">
-            <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
+            <div className="rounded-lg bg-white w-80  p-2 h-max px-4">
                 <Heading label={"Sign in"} />
                 <SubHeading label={"Enter your credentials to access your account"}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
@@ -25,7 +25,7 @@ export const Signin = () => {
                 }} placeholder="password" label={"Password"} value={password}/>
                 <div className="pt-4">
                     <Button1 onClick={async () => {
-                        const response = await axios.post("http://localhost:3000/api/v1/user/signin", {
+                        const response = await axios.post(`${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/user/signin`, {
                             username,
                             password,
                         });

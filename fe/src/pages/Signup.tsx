@@ -16,7 +16,7 @@ export const Signup = () => {
 
     return <div className="bg-slate-300 h-screen flex justify-center">
         <div className="flex flex-col justify-center">
-            <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
+            <div className="rounded-lg bg-white w-80  p-2 h-max px-4">
                 <Heading label={"Sign up"}/>
                 <SubHeading label={"Enter your information to create an account"}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
@@ -24,13 +24,13 @@ export const Signup = () => {
                 }} placeholder="JohnMan" label={"Username"} value={username}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setEmail(e.target.value);
-                }} placeholder="John@gmail.com" label={"Email"} value={email}/>
+                }} placeholder="john@gmail.com" label={"Email"} value={email}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setPassword(e.target.value)
-                }} placeholder="Password" label={"Password"} value={password}/>
+                }} placeholder="password" label={"Password"} value={password}/>
                 <div className="pt-4">
                     <Button1  onClick={async () => {
-                        const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+                        const response = await axios.post(`${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/user/signup`, {
                             username,
                             email,
                             password,

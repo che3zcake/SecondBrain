@@ -93,7 +93,7 @@ export default function Layout(){
                             onClick={async () => {
                                 try {
                                     console.log('trying')
-                                    const response = await axios.post('http://localhost:3000/api/v1/content/create', {
+                                    const response = await axios.post(`${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/content/create`, {
                                         title,
                                         type,
                                         image:img,
@@ -144,7 +144,7 @@ export default function Layout(){
                             className="bg-red-600  px-4 py-2 rounded cursor-pointer"
                             onClick={async () => {
                                 try {
-                                    await axios.delete(`http://localhost:3000/api/v1/content/${contentId}`, {
+                                    await axios.delete(`${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/content/${contentId}`, {
                                         headers: {
                                             Authorization: `Bearer ${localStorage.getItem('authorization')}`,
                                         }

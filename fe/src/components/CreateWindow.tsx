@@ -55,7 +55,7 @@ export default function createWindow() {
     useEffect(() => {
         if (!link) return;
 
-        axios.get('http://localhost:3000/api/v1/meta', {
+        axios.get(`${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/meta`, {
             params: {url: link}
         })
             .then((response: { data: any; }) => {
