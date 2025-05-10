@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization;
     if (!authHeader || !authHeader.startsWith('Bearer')) {
@@ -11,7 +13,7 @@ const authMiddleware = (req, res, next) => {
     }
     const token = authHeader.split(' ')[1];
     try {
-        const decoded = jsonwebtoken_1.default.verify(token, 'lawrence');
+        const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
         // @ts-ignore
         req.userId = decoded.id;
         next();

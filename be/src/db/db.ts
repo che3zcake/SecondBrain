@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 (async () => {
     try{
-        await mongoose.connect("mongodb+srv://che3zcake:spider30114@cluster0.ab8kv.mongodb.net/")
+        await mongoose.connect(process.env.MONGODB_URI as string)
         console.log("Database connected successfully")
     }catch(e){
         console.error("Database connection error:", e)

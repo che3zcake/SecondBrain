@@ -49,7 +49,7 @@ userRouter.post('/signup', async (req, res)=>{
 
         const token = jwt.sign({
             id: id
-        }, "lawrence")
+        }, process.env.JWT_SECRET as string)
 
         return res.json({
             message: "User created",
@@ -97,7 +97,7 @@ userRouter.post('/signin', async (req, res)=>{
 
         const token = jwt.sign({
             id: existingUser._id
-        }, "lawrence")
+        }, process.env.JWT_SECRET as string)
 
         return res.json({
             message: 'Login successful',

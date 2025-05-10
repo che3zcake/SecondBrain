@@ -54,7 +54,7 @@ userRouter.post('/signup', (req, res) => __awaiter(void 0, void 0, void 0, funct
         const id = newUser._id;
         const token = jsonwebtoken_1.default.sign({
             id: id
-        }, "lawrence");
+        }, process.env.JWT_SECRET);
         return res.json({
             message: "User created",
             userId: id,
@@ -95,7 +95,7 @@ userRouter.post('/signin', (req, res) => __awaiter(void 0, void 0, void 0, funct
         }
         const token = jsonwebtoken_1.default.sign({
             id: existingUser._id
-        }, "lawrence");
+        }, process.env.JWT_SECRET);
         return res.json({
             message: 'Login successful',
             userId: existingUser._id,

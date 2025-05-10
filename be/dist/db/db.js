@@ -14,9 +14,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tag = exports.Content = exports.Link = exports.User = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield mongoose_1.default.connect("mongodb+srv://che3zcake:spider30114@cluster0.ab8kv.mongodb.net/");
+        yield mongoose_1.default.connect(process.env.MONGODB_URI);
         console.log("Database connected successfully");
     }
     catch (e) {
