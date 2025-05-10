@@ -19,10 +19,10 @@ export const Signin = () => {
                 <SubHeading label={"Enter your credentials to access your account"}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setUsername(e.target.value);
-                }} placeholder="Username or Email" label={"Username"}/>
+                }} placeholder="Username or Email" label={"Username"} value={username}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setPassword(e.target.value);
-                }} placeholder="password" label={"Password"}/>
+                }} placeholder="password" label={"Password"} value={password}/>
                 <div className="pt-4">
                     <Button1 onClick={async () => {
                         const response = await axios.post("http://localhost:3000/api/v1/user/signin", {

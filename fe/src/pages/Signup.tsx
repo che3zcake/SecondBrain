@@ -21,13 +21,13 @@ export const Signup = () => {
                 <SubHeading label={"Enter your information to create an account"}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setUsername(e.target.value);
-                }} placeholder="JohnMan" label={"Username"}/>
+                }} placeholder="JohnMan" label={"Username"} value={username}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setEmail(e.target.value);
-                }} placeholder="John@gmail.com" label={"Email"}/>
+                }} placeholder="John@gmail.com" label={"Email"} value={email}/>
                 <InputBox onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setPassword(e.target.value)
-                }} placeholder="Password" label={"Password"} />
+                }} placeholder="Password" label={"Password"} value={password}/>
                 <div className="pt-4">
                     <Button1  onClick={async () => {
                         const response = await axios.post("http://localhost:3000/api/v1/user/signup", {

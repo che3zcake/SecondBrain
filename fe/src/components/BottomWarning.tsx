@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 
+// @ts-ignore
 export function BottomWarning({label, buttonText, to}) {
     return <div className="py-2 text-sm flex justify-center">
         <div>
