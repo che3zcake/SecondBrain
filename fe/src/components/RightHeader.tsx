@@ -12,7 +12,7 @@ export default function RightHeader(){
     return <div className="pt-12 px-2 pr-4 pb-1 flex justify-between">
         {/*<Toaster position="top-center"/>*/}
         <div className="text-3xl font-bold pl-8">
-            {cardtype?cardtype.charAt(0).toUpperCase()+ cardtype.slice(1):'All Notes'}
+            {cardtype?'ok':'All Notes'}
         </div>
         <div className="flex items-center px-8 gap-4">
             {/*<button onClick={async ()=>{*/}

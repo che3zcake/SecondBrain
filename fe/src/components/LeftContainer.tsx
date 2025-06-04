@@ -57,7 +57,7 @@ export default function LeftContainer(){
                 {typeContainer.map((item) => (
                     <li key={item.id} className={"flex justify-between items-center px-8"}>
                         <Button onClick={() => {
-                            setCardType(item.id)
+                            // setCardType(item.id)
                             console.log(cardtype)
                         }}
                                 label={item}/>
