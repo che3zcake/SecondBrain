@@ -22,8 +22,7 @@ userRouter.post('/signup', async (req, res)=>{
                 message: "Invalid Input"
             })
         }
-        const existingUserEmail = await
-            User.findOne({email: body.email})
+        const existingUserEmail = await User.findOne({email: body.email})
         if (existingUserEmail){
             return res.status(400).json({
                 message: "A user with this email already exists.",
