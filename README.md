@@ -37,8 +37,8 @@ A full-stack web application to store, organize, and quickly access bookmarks us
 ## 📁 Project Structure
 
 ```
-client/      # React + Tailwind frontend
-server/      # Express + MongoDB backend
+fe/      # React + Tailwind frontend
+be/      # Express + MongoDB backend
 ```
 
 ---
@@ -120,3 +120,4 @@ If you want, I can also:
 ✅ create a deployment section
 
 Just tell me what you want to add next.
+
